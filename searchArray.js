@@ -10,5 +10,18 @@
  * searchArray([1, 2, 3, 4], 3) should return true.
  * searchArray([1, 2, 3, 4], 5) should return false.
  */
-
+function searchArray(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return true;
+      }
+    }
+    return false;
+  }
+  console.log(searchArray([1, 2, 3, 4], 3)); // true
+  console.log(searchArray([1, 2, 3, 4], 5)); // false
+  
+  
 module.exports = searchArray;
+  
+
