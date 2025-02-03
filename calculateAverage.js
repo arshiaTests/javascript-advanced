@@ -9,16 +9,12 @@
  * calculateAverage([1, 2, 3, 4]) should return 2.5.
  * calculateAverage([10, 20, 30]) should return 20.
  */
-function calculateAverage (num){
- 
-    let sum = 0;
-    for( let i = 0 ; i < num.length ; i++){
-        sum += num[i];
-    } 
-    return sum / num.length ;
+function calculateAverage(num, sum = 0, index = 0) {
+    if (index === num.length) return sum / num.length;
+    return calculateAverage(num, sum + num[index], index + 1);
 }
-console.log(calculateAverage([1,2,3,4]))
-
+console.log(calculateAverage([1, 2, 3, 4]));
+module.exports = calculateAverage;
 
 
 module.exports = calculateAverage;
