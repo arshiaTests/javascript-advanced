@@ -14,31 +14,17 @@
  */
 
 // Write your solution here
-// تعریف تابع cal
+
 function cal(opp, a, b) {
-    switch (opp) {
-        case "add":
-            return a + b;
-        case "subtract":
-            return a - b;
-        case "multiply":
-            return a * b;
-        case "divide":
-            if (b === 0) {
-                return "write a num";
-            }
-            return a / b;
-        default:
-            return "come on";
-    }
+    const operations = {
+        add: (a, b) => a + b,
+        subtract: (a, b) => a - b,
+        multiply: (a, b) => a * b,
+        divide: (a, b) => (b === 0 ? "write a num" : a / b),
+    };
+    return operations[opp] ? operations[opp](a, b) : "come on";
 }
 
-// تست فراخوانی تابع با ورودی‌های مختلف
-console.log(cal("add", 2, 3));       // Output: 5
-console.log(cal("subtract", 5, 3));  // Output: 2
-console.log(cal("multiply", 4, 5));  // Output: 20
-console.log(cal("divide", 10, 2));   // Output: 5
-console.log(cal("divide", 10, 0));   // Output: write a num
-console.log(cal("modulus", 10, 3));  // Output: come on
+console.log(cal("multiply", 4, 5)); // 20
+module.exports = { cal };
 
-module.exports = {add,subtract,multiply,divide};
