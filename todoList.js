@@ -13,5 +13,64 @@
  */
 
 // Write your solution here
+class TodoList {
+    constructor() {
+        this.tasks = [];
+    }
+
+    /**
+     * افزودن وظیفه به لیست
+     * @param {string} task - وظیفه جدید
+     */
+    addTask(task) {
+        if (!task) {
+            console.log("Task cannot be empty.");
+            return;
+        }
+        this.tasks.push(task);
+        console.log(`Task "${task}" added.`);
+    }
+
+    /**
+     * حذف وظیفه از لیست
+     * @param {string} task - وظیفه‌ای که باید حذف شود
+     */
+    removeTask(task) {
+        const index = this.tasks.indexOf(task);
+        if (index !== -1) {
+            this.tasks.splice(index, 1);
+            console.log(`Task "${task}" removed.`);
+        } else {
+            console.log(`Task "${task}" not found.`);
+        }
+    }
+
+    /**
+     * نمایش تمامی وظایف
+     */
+    showTasks() {
+        if (this.tasks.length === 0) {
+            console.log("No tasks available.");
+        } else {
+            console.log("Current tasks:");
+            this.tasks.forEach((task, index) => {
+                console.log(`${index + 1}. ${task}`);
+            });
+        }
+    }
+}
+
+
+
+
+myTodoList.addTask("Learn JavaScript");
+myTodoList.addTask("Workout");
+myTodoList.showTasks();
+myTodoList.removeTask("Workout");
+myTodoList.showTasks();
+
+
+
+
 
 module.exports = { addTask, removeTask, showTasks };
