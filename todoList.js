@@ -19,7 +19,7 @@ class TodoList {
     }
 
     /**
-     * افزودن وظیفه به لیست
+   
      * @param {string} task - وظیفه جدید
      */
     addTask(task) {
